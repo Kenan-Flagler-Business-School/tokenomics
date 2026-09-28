@@ -180,7 +180,7 @@ export const ValuationModel: React.FC<Props> = ({ inputs, tok, onChange, profess
 
           <InfoBox type="warning" title="Token Market Value ≠ Company Value">
             This model estimates a notional token market value based on transaction flows.
-            This is distinct from the intrinsic equity value of Axiom AI as a company. Equity value
+            This is distinct from the intrinsic equity value of Kenan-Flagler AI as a company. Equity value
             depends on cash flows, growth prospects, competitive moats, and risk — factors not captured
             by the token monetary model.
           </InfoBox>

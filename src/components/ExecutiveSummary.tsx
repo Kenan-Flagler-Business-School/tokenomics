@@ -21,7 +21,7 @@ export const ExecutiveSummary: React.FC<Props> = ({ inputs, biz, cost, tok, trea
         <p>
           <strong>Educational Disclaimer:</strong> This simulation is an educational model for classroom use.
           It does not represent financial advice, an actual security, or a prediction of real-world token prices.
-          All figures are hypothetical outputs of a simplified economic model for the fictional company Axiom AI.
+          All figures are hypothetical outputs of a simplified economic model for the fictional company Kenan-Flagler AI.
         </p>
       </div>
 

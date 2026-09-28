@@ -141,7 +141,7 @@ function TokenomicsApp({ onBack }: { onBack: () => void }) {
               <Cpu size={16} className="text-white" />
             </div>
             <div>
-              <span className="font-bold text-slate-800 text-sm">Axiom AI</span>
+              <span className="font-bold text-slate-800 text-sm">Kenan-Flagler AI</span>
               <span className="ml-1.5 text-xs text-slate-400 hidden sm:inline">Tokenomics Simulation</span>
             </div>
           </div>
@@ -236,7 +236,7 @@ function TokenomicsApp({ onBack }: { onBack: () => void }) {
                 </p>
               </div>
               <div className="hidden md:block text-right text-xs text-slate-400 space-y-1">
-                <div>Fictional company: <span className="font-medium text-slate-600">Axiom AI</span></div>
+                <div>Fictional company: <span className="font-medium text-slate-600">Kenan-Flagler AI</span></div>
                 <div>Token: <span className="font-medium text-violet-600">AXM</span></div>
                 <div>Supply: <span className="font-mono font-medium text-slate-600">100,000,000</span></div>
               </div>
@@ -247,7 +247,7 @@ function TokenomicsApp({ onBack }: { onBack: () => void }) {
             <ExecutiveSummary inputs={inputs} biz={biz} cost={cost} tok={tok} treasury={treasury} />
           </Section>
 
-          <Section id="business" title="Business Model" subtitle="Configure Axiom AI's revenue streams and user economics." badge="Section 2">
+          <Section id="business" title="Business Model" subtitle="Configure Kenan-Flagler AI's revenue streams and user economics." badge="Section 2">
             <BusinessModel inputs={inputs} biz={biz} onChange={handleChange} professorMode={professorMode} />
           </Section>
 
@@ -306,7 +306,7 @@ function TokenomicsApp({ onBack }: { onBack: () => void }) {
 
           <footer className="mt-16 pt-8 border-t border-slate-200 text-center">
             <p className="text-xs text-slate-400 max-w-xl mx-auto leading-relaxed">
-              Axiom AI Tokenomics Simulation is an educational tool designed for Kenan-Flagler Business School curricula.
+              This Tokenomics Simulation is an educational tool designed for Kenan-Flagler Business School curricula.
               All data, companies, tokens, and financial figures are entirely fictional.
               This simulation does not constitute financial advice, investment recommendations, or predictions.
               Model outputs are illustrative only.

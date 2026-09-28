@@ -87,7 +87,7 @@ export const HomePage: React.FC<Props> = ({ onSelect }) => {
             </div>
             <h2 className="text-xl font-bold text-slate-900 mb-2">AI Token Economics — Case Study</h2>
             <p className="text-sm text-slate-500 mb-5 leading-relaxed">
-              An interactive MBA-style case study on Axiom AI's token economics platform.
+              An interactive MBA-style case study on Kenan-Flagler AI's token economics platform.
               Explore platform economics, token design, valuation models, and scenario analysis.
             </p>
             <div className="space-y-2">

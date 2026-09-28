@@ -11,12 +11,12 @@ interface Question {
 const QUESTIONS: Question[] = [
   {
     id: 1,
-    question: 'Does Axiom AI actually need a token?',
+    question: 'Does Kenan-Flagler AI actually need a token?',
     category: 'Strategy',
     hints: [
       'What functionality requires a token that cannot be achieved with fiat payments, subscription pricing, or conventional loyalty points?',
       'Consider: what specific coordination or incentive problems does the token solve for this platform?',
-      'Compare: Stripe, Twilio, and OpenAI all operate large API platforms without utility tokens. What would change if Axiom AI did the same?',
+      'Compare: Stripe, Twilio, and OpenAI all operate large API platforms without utility tokens. What would change if Kenan-Flagler AI did the same?',
     ],
   },
   {
@@ -74,7 +74,7 @@ const QUESTIONS: Question[] = [
     question: 'What tradeoffs exist between decentralization and corporate control of the platform?',
     category: 'Governance',
     hints: [
-      'Axiom AI is a corporation. Can it simultaneously decentralize governance and fulfill legal obligations to shareholders?',
+      'Kenan-Flagler AI is a corporation. Can it simultaneously decentralize governance and fulfill legal obligations to shareholders?',
       'What decisions should the community govern? What decisions require corporate judgment?',
       'What happens when community and shareholder interests conflict?',
     ],
@@ -86,7 +86,7 @@ const QUESTIONS: Question[] = [
     hints: [
       'If users must acquire AXM to access the platform, how does this affect the customer acquisition funnel?',
       'For enterprise customers, how does token exposure change procurement and contracting?',
-      'Is there a risk that token requirements disadvantage Axiom AI relative to competitors without token requirements?',
+      'Is there a risk that token requirements disadvantage Kenan-Flagler AI relative to competitors without token requirements?',
     ],
   },
   {
