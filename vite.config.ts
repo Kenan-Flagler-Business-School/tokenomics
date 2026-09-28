@@ -8,4 +8,4 @@ export default defineConfig({
     port: parseInt(process.env.PORT || '5173'),
     strictPort: false,
   },
-})
+}) 
