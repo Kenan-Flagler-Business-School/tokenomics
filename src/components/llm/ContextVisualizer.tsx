@@ -14,7 +14,7 @@ function fmtCost(v: number): string {
 }
 
 export const ContextVisualizer: React.FC = () => {
-  const [selectedModelId, setSelectedModelId] = useState('claude-3-5-sonnet');
+  const [selectedModelId, setSelectedModelId] = useState('claude-sonnet-5');
   const [items, setItems] = useState(CONTEXT_DEFAULT_ITEMS.map((i) => ({ ...i })));
   const [outputTokens, setOutputTokens] = useState(600);
 

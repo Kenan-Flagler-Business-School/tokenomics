@@ -11,7 +11,7 @@ function fmtCost(v: number): string {
 }
 
 export const MonthlyCalculator: React.FC = () => {
-  const [selectedModelId, setSelectedModelId] = useState('claude-3-5-sonnet');
+  const [selectedModelId, setSelectedModelId] = useState('claude-sonnet-5');
   const [requestsPerDay, setRequestsPerDay] = useState(10);
   const [inputTokens, setInputTokens] = useState(3000);
   const [outputTokens, setOutputTokens] = useState(1000);

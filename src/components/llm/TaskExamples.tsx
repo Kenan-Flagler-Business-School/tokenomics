@@ -29,7 +29,7 @@ export const TaskExamples: React.FC = () => {
   const [tokenEdits, setTokenEdits] = useState<Record<string, { input: number; output: number }>>({});
 
   const displayModels = MODELS.filter((m) =>
-    ['claude-haiku-4-5', 'claude-3-5-sonnet', 'claude-sonnet-5', 'gpt-4o-mini', 'gpt-4o', 'o3-mini'].includes(m.id)
+    ['claude-haiku-4-5', 'claude-sonnet-5', 'claude-opus-5-5', 'gpt-6-luna', 'gpt-6-sol', 'gpt-6-astra'].includes(m.id)
   );
 
   return (

@@ -8,7 +8,7 @@ const SOURCES = [
     color: 'orange',
     links: [
       { label: 'Model Overview', url: 'https://docs.anthropic.com/en/docs/about-claude/models', desc: 'Official list of available Claude models with IDs and capabilities' },
-      { label: 'Pricing', url: 'https://www.anthropic.com/pricing', desc: 'Current pricing for all Claude models' },
+      { label: 'Pricing', url: 'https://claude.com/pricing', desc: 'Current pricing for all Claude models' },
       { label: 'API Documentation', url: 'https://docs.anthropic.com', desc: 'Full Claude API reference' },
       { label: 'Prompt Caching', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching', desc: 'How prompt caching works and supported models' },
     ],
@@ -18,7 +18,7 @@ const SOURCES = [
     color: 'green',
     links: [
       { label: 'Models Overview', url: 'https://platform.openai.com/docs/models', desc: 'Official list of available OpenAI models with capabilities' },
-      { label: 'Pricing', url: 'https://openai.com/pricing', desc: 'Current pricing for all OpenAI models' },
+      { label: 'Pricing', url: 'https://developers.openai.com/api/docs/pricing', desc: 'Current pricing for all OpenAI models' },
       { label: 'API Documentation', url: 'https://platform.openai.com/docs', desc: 'Full OpenAI API reference' },
       { label: 'Prompt Caching', url: 'https://platform.openai.com/docs/guides/prompt-caching', desc: 'How prompt caching works in the OpenAI API' },
     ],
@@ -27,6 +27,7 @@ const SOURCES = [
 
 const verifiedModels = MODELS.filter((m) => m.pricingVerified);
 const estimatedModels = MODELS.filter((m) => !m.pricingVerified);
+const lastVerifiedDates = Array.from(new Set(verifiedModels.map((m) => m.pricingLastVerified))).sort();
 
 export const DataSources: React.FC = () => {
   return (
@@ -84,13 +85,13 @@ export const DataSources: React.FC = () => {
           <div className="font-semibold text-slate-700 text-sm">Model Pricing Verification Status</div>
         </div>
         <div className="p-4">
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className={estimatedModels.length > 0 ? 'grid sm:grid-cols-2 gap-4' : ''}>
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <CheckCircle size={15} className="text-emerald-500" />
                 <span className="text-sm font-medium text-slate-700">Verified pricing ({verifiedModels.length} models)</span>
               </div>
-              <div className="space-y-1">
+              <div className={`grid gap-1 ${estimatedModels.length > 0 ? '' : 'sm:grid-cols-2 gap-x-4'}`}>
                 {verifiedModels.map((m) => (
                   <div key={m.id} className="flex items-center justify-between text-xs text-slate-600 py-1 border-b border-slate-100 last:border-0">
                     <span>{m.name}</span>
@@ -98,32 +99,40 @@ export const DataSources: React.FC = () => {
                   </div>
                 ))}
               </div>
+              {estimatedModels.length === 0 && lastVerifiedDates.length > 0 && (
+                <div className="mt-3 text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg p-2">
+                  All models currently listed were verified against official pricing pages as of {lastVerifiedDates[lastVerifiedDates.length - 1]}.
+                  Pricing still changes over time — check the source links above before budgeting.
+                </div>
+              )}
             </div>
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <AlertCircle size={15} className="text-amber-500" />
-                <span className="text-sm font-medium text-slate-700">Estimated pricing ({estimatedModels.length} models)</span>
+            {estimatedModels.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <AlertCircle size={15} className="text-amber-500" />
+                  <span className="text-sm font-medium text-slate-700">Estimated pricing ({estimatedModels.length} models)</span>
+                </div>
+                <div className="space-y-1">
+                  {estimatedModels.map((m) => (
+                    <div key={m.id} className="flex items-center justify-between text-xs text-slate-600 py-1 border-b border-slate-100 last:border-0">
+                      <span>{m.name}</span>
+                      <a
+                        href={m.pricingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-700 inline-flex items-center gap-0.5"
+                      >
+                        Verify <ExternalLink size={10} />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2">
+                  These models were released or updated after the last verified data snapshot.
+                  Pricing shown is estimated based on comparable models.
+                </div>
               </div>
-              <div className="space-y-1">
-                {estimatedModels.map((m) => (
-                  <div key={m.id} className="flex items-center justify-between text-xs text-slate-600 py-1 border-b border-slate-100 last:border-0">
-                    <span>{m.name}</span>
-                    <a
-                      href={m.pricingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-700 inline-flex items-center gap-0.5"
-                    >
-                      Verify <ExternalLink size={10} />
-                    </a>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2">
-                These models were released or updated after the last verified data snapshot.
-                Pricing shown is estimated based on comparable models.
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

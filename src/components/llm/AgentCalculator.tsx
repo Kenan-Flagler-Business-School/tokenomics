@@ -18,7 +18,7 @@ const EXAMPLE_FLOW = [
 ];
 
 export const AgentCalculator: React.FC = () => {
-  const [selectedModelId, setSelectedModelId] = useState('claude-3-5-sonnet');
+  const [selectedModelId, setSelectedModelId] = useState('claude-sonnet-5');
   const [callsPerTask, setCallsPerTask] = useState(5);
   const [inputPerCall, setInputPerCall] = useState(4000);
   const [outputPerCall, setOutputPerCall] = useState(1500);

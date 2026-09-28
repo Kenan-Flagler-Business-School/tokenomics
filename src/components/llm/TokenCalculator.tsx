@@ -19,7 +19,7 @@ function fmtCostShort(v: number): string {
 }
 
 export const TokenCalculator: React.FC = () => {
-  const [selectedModelId, setSelectedModelId] = useState('claude-3-5-sonnet');
+  const [selectedModelId, setSelectedModelId] = useState('claude-sonnet-5');
   const [inputTokens, setInputTokens] = useState(3000);
   const [outputTokens, setOutputTokens] = useState(1000);
   const [cachedTokens, setCachedTokens] = useState(0);
@@ -172,7 +172,7 @@ export const TokenCalculator: React.FC = () => {
               <div>
                 <strong>Note:</strong> Pricing for {model.name} is estimated. Verify the current rate at{' '}
                 <a href={model.pricingUrl} target="_blank" rel="noopener noreferrer" className="underline">
-                  {model.provider === 'Anthropic' ? 'anthropic.com/pricing' : 'openai.com/pricing'}
+                  {model.provider === 'Anthropic' ? 'claude.com/pricing' : 'developers.openai.com/api/docs/pricing'}
                 </a>{' '}
                 before making decisions.
               </div>

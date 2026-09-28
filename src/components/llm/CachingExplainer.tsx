@@ -10,7 +10,7 @@ function fmtCost(v: number): string {
 }
 
 export const CachingExplainer: React.FC = () => {
-  const [selectedModelId, setSelectedModelId] = useState('claude-3-5-sonnet');
+  const [selectedModelId, setSelectedModelId] = useState('claude-sonnet-5');
   const [materialTokens, setMaterialTokens] = useState(20000);
   const [queryTokens, setQueryTokens] = useState(300);
   const [outputTokens, setOutputTokens] = useState(800);

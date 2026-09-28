@@ -38,7 +38,7 @@ export const StudentFacultyExamples: React.FC = () => {
   const selectedTask = selectedPrompt ? USE_CASES.find((t) => t.id === selectedPrompt.taskId) : null;
 
   const displayModels = MODELS.filter((m) =>
-    ['claude-haiku-4-5', 'claude-3-5-sonnet', 'claude-sonnet-5', 'gpt-4o-mini', 'gpt-4o'].includes(m.id)
+    ['claude-haiku-4-5', 'claude-sonnet-5', 'claude-opus-5-5', 'gpt-6-luna', 'gpt-6-sol'].includes(m.id)
   );
 
   const handleTabChange = (t: 'student' | 'faculty') => {

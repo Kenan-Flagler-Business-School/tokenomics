@@ -12,7 +12,7 @@ function fmtCost(v: number): string {
 
 export const ModelComparison: React.FC = () => {
   const [selectedIds, setSelectedIds] = useState<Set<string>>(
-    new Set(['claude-haiku-4-5', 'claude-3-5-sonnet', 'claude-sonnet-5', 'gpt-4o-mini', 'gpt-4o', 'o3-mini'])
+    new Set(['claude-haiku-4-5', 'claude-sonnet-5', 'claude-opus-5-5', 'gpt-6-luna', 'gpt-6-sol', 'gpt-6-astra'])
   );
   const [inputTokens, setInputTokens] = useState(25000);
   const [outputTokens, setOutputTokens] = useState(4000);
@@ -155,7 +155,6 @@ export const ModelComparison: React.FC = () => {
       <div className="mt-3 flex items-start gap-2 text-xs text-slate-400">
         <AlertCircle size={13} className="mt-0.5 flex-shrink-0" />
         Models sorted by total cost (lowest first). Relative cost bar compares within this selection only.
-        Prices for some newer models are estimated — verify at provider websites.
       </div>
     </div>
   );
