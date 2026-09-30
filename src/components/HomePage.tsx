@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Calculator, ChevronRight, BarChart2, Users, GraduationCap } from 'lucide-react';
+import { BookOpen, Calculator, ChevronRight, BarChart2, Users, GraduationCap, AlertTriangle } from 'lucide-react';
 
 interface Props {
   onSelect: (app: 'tokenomics' | 'llm') => void;
@@ -77,15 +77,23 @@ export const HomePage: React.FC<Props> = ({ onSelect }) => {
           {/* Tokenomics Case Study */}
           <button
             onClick={() => onSelect('tokenomics')}
-            className="group text-left bg-white border-2 border-slate-200 rounded-2xl p-8 hover:border-emerald-400 hover:shadow-lg transition-all duration-200"
+            className="group text-left bg-white border-2 border-amber-300 rounded-2xl p-8 hover:border-amber-400 hover:shadow-lg transition-all duration-200 relative"
           >
-            <div className="flex items-start justify-between mb-5">
+            <div className="absolute -top-3 left-6 flex items-center gap-1.5 bg-amber-400 text-amber-950 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+              <AlertTriangle size={12} />
+              Draft — Not Yet Live
+            </div>
+            <div className="flex items-start justify-between mb-5 mt-1">
               <div className="w-12 h-12 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center">
                 <BookOpen size={22} className="text-emerald-600" />
               </div>
               <ChevronRight size={20} className="text-slate-300 group-hover:text-emerald-400 transition-colors mt-1" />
             </div>
             <h2 className="text-xl font-bold text-slate-900 mb-2">AI Token Economics — Case Study</h2>
+            <div className="flex items-center gap-1.5 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5 mb-3">
+              <AlertTriangle size={13} className="flex-shrink-0" />
+              Content has not yet been reviewed for accuracy and is not live for students/faculty.
+            </div>
             <p className="text-sm text-slate-500 mb-5 leading-relaxed">
               An interactive MBA-style case study on Kenan-Flagler AI's token economics platform.
               Explore platform economics, token design, valuation models, and scenario analysis.

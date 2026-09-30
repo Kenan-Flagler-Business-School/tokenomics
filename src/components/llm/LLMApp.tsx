@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { BookOpen, Calculator, Grid, List, BarChart2, Users, BookMarked, Cpu, Calendar, Zap, Eye, Shield, HelpCircle, ArrowLeft, Menu, X } from 'lucide-react';
+import { BookOpen, Calculator, Grid, List, BarChart2, BookMarked, Cpu, Calendar, Zap, Eye, Shield, HelpCircle, ArrowLeft, Menu, X, Info } from 'lucide-react';
 import { ModelGuide } from './ModelGuide';
+import { ModelDetails } from './ModelDetails';
 import { TaskSelector } from './TaskSelector';
 import { TaskExamples } from './TaskExamples';
 import { TokenCalculator } from './TokenCalculator';
@@ -10,7 +11,6 @@ import { AgentCalculator } from './AgentCalculator';
 import { ContextVisualizer } from './ContextVisualizer';
 import { CachingExplainer } from './CachingExplainer';
 import { CheatSheet } from './CheatSheet';
-import { StudentFacultyExamples } from './StudentFacultyExamples';
 import { DataSources } from './DataSources';
 
 interface Props {
@@ -28,7 +28,7 @@ const NAV_ITEMS = [
   { id: 'context', label: 'Context Window', icon: Eye },
   { id: 'caching', label: 'Caching', icon: Zap },
   { id: 'cheat-sheet', label: 'Quick Reference', icon: List },
-  { id: 'examples', label: 'Student & Faculty', icon: Users },
+  { id: 'model-details', label: 'Model Details', icon: Info },
   { id: 'sources', label: 'Data Sources', icon: Shield },
 ];
 
@@ -142,7 +142,7 @@ export const LLMApp: React.FC<Props> = ({ onBack }) => {
             <section id="context"><ContextVisualizer /></section>
             <section id="caching"><CachingExplainer /></section>
             <section id="cheat-sheet"><CheatSheet /></section>
-            <section id="examples"><StudentFacultyExamples /></section>
+            <section id="model-details"><ModelDetails /></section>
             <section id="sources"><DataSources /></section>
           </div>
         </main>
